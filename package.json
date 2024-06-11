@@ -1,23 +1,36 @@
 {
-    "name": "back",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "type": "module",
-    "scripts": {
-        "dev": "nodemon -r dotenv/config --experimental-json-modules src/index.js"
-    },
-    "author": "mihir",
-    "license": "ISC",
-    "devDependencies": {
-        "nodemon": "^3.1.0",
-        "prettier": "^3.2.5"
-    },
-    "dependencies": {
-        "cookie-parser": "^1.4.6",
-        "cors": "^2.8.5",
-        "dotenv": "^16.4.5",
-        "express": "^4.18.3",
-        "mongoose": "^8.2.1"
-    }
+  "name": "expense-tracker",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@hookform/resolvers": "^3.6.0",
+    "axios": "^1.7.2",
+    "bcryptjs": "^2.4.3",
+    "jose": "^5.4.0",
+    "jsonwebtoken": "^9.0.2",
+    "lucide-react": "^0.390.0",
+    "mongoose": "^8.4.1",
+    "next": "14.2.3",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-hook-form": "^7.51.5",
+    "yup": "^1.4.0"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/jsonwebtoken": "^9.0.6",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "daisyui": "^4.12.2",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  }
 }
