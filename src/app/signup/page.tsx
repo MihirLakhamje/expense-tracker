@@ -1,5 +1,10 @@
 import SignupForm from "@/components/SignupForm";
+import { Metadata } from "next";
 
+export const metadata: Metadata = {
+  title: "Create Account - Expense Tracker",
+  description: "Signup Page",
+};
 
 export default function Signup() {
   
