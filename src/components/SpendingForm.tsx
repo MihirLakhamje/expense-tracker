@@ -16,7 +16,7 @@ type Input = {
 
 const spendingSchema = yup.object({
   title: yup.string().required(),
-  amount: yup.number().required("Amount is required"),
+  amount: yup.number().min(0, "Amount cannot be negative").required("Amount is required"),
   category: yup.string().required(),
 });
 
@@ -78,6 +78,7 @@ export default function SpendingForm() {
           </label>
           <input
             type="number"
+            min={0}
             placeholder="Amount that you spent"
             className="input input-bordered"
             {...register("amount")}
