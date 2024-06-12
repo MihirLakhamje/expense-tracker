@@ -4,9 +4,9 @@ import { Pencil, Plus, Trash2 } from "lucide-react";
 import Link from "next/link";
 import React, { useEffect } from "react";
 
-export default function ViewAllSpendings() {
-  const [spending, setSpendings] = React.useState([]);
-  const [totalAmount, setTotalAmount] = React.useState(0);
+export default function ViewAllSpendings(){
+  const [spending, setSpendings] = React.useState<any[]>([]);
+  const [totalAmount, setTotalAmount] = React.useState<number>(0);
 
   useEffect(() => {
     async function fetchData() {
@@ -36,11 +36,11 @@ export default function ViewAllSpendings() {
         <Link href={"/add"} className="btn btn-primary btn-sm">
           Add Spendings <Plus />
         </Link>
-        <span>Total Amount: &#8377; {totalAmount || 0}/-</span>
+        <span>Total Amount: ₹ {totalAmount || 0}/-</span>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 pt-5">
         {spending &&
-          spending.map((spending: any) => (
+          spending.map((spending) => (
             <div className="card  bg-base-100 border" key={spending._id}>
               <div className="card-body p-4">
                 <div className="flex justify-between">

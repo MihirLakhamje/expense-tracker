@@ -17,7 +17,7 @@ type Input = {
 
 const spendingSchema = yup.object({
   title: yup.string().required(),
-  amount: yup.number().required(),
+  amount: yup.number().min(0).required(),
   category: yup.string().required(),
 });
 
@@ -115,6 +115,7 @@ export default function ViewSpends() {
           </label>
           <input
             type="text"
+            min={0}
             placeholder="Amount that you spent"
             className="input input-bordered"
             {...register("amount")}
