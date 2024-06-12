@@ -27,7 +27,9 @@ export default function ToggleTheme() {
           checked={theme === "dark"}
           onChange={() => {
             setTheme(theme === "dark" ? "light" : "dark");
-            localStorage.setItem("data-theme", theme === "dark" ? "light" : "dark");
+            if(window && window.localStorage){
+              localStorage.setItem("data-theme", theme === "dark" ? "light" : "dark");
+            }
           }}
         />
         <svg
