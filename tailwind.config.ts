@@ -18,7 +18,7 @@ const config: Config = {
     },
   },
   daisyui: {
-    themes: ["business"],
+    themes: ["business", "light", "dark", "nord", "fantasy", "pastel"],
   },
   plugins: [daisyui],
 };
