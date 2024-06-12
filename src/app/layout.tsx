@@ -5,7 +5,6 @@ import LogoutBtn from "@/components/LogoutBtn";
 import Link from "next/link";
 import { getSession } from "@/libs/auth";
 import ToggleTheme from "@/components/ToggleTheme";
-
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -20,22 +19,26 @@ export default async function RootLayout({
 }>) {
   const session = await getSession();
   return (
-    <html lang="en">
+    <html lang="en" data-theme="light">
       <body className={`${inter.className}`}>
-        <div className="navbar bg-base-100 py-2 border-b px-2 sm:px-20">
-          <div className="flex-1">
-            <Link href={"/"} className="btn btn-ghost text-lg btn-sm">
-              Expense Tracker
-            </Link>
-          </div>
-          <ToggleTheme/>
-          {session && (
-            <div className="flex-none">
-              <LogoutBtn />
+       
+          <div className="navbar bg-base-100 py-2 border-b px-2 sm:px-20">
+            <div className="flex-1">
+              <Link href={"/"} className="btn btn-ghost text-lg btn-sm">
+                Expense Tracker
+              </Link>
             </div>
-          )}
-        </div>
-        <main className="py-4  px-2 sm:px-20 sm:py-5">{children}</main>
+            <ToggleTheme />
+            {session && (
+              <div className="flex-none">
+                <LogoutBtn />
+              </div>
+            )}
+          </div>
+          <main className="py-4  px-2 sm:px-20 sm:py-5">
+            {children}
+
+          </main>
       </body>
     </html>
   );
